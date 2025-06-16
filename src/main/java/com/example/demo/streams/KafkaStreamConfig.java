@@ -58,27 +58,27 @@ public class KafkaStreamConfig {
         topicB.foreach((key, value) -> log.info("Received from TOPIC_B -> key={}, value={}", key, value));
 
 
-        KStream<String, TopicAValue> parsedA = topicA.mapValues(value -> {
+        KStream<String, TopicA> parsedA = topicA.mapValues(value -> {
             try {
-                return mapper.readValue(value, TopicAValue.class);
+                return mapper.readValue(value, TopicA.class);
             } catch (Exception e) {
                 return null;
             }
         }).filter((k, v) -> v != null &&
-                "001".equals(v.getCountry()) &&
-                v.getCatalog_number().length() == 5 &&
-                isValidDate(v.getSelling_status_date()));
+                "001".equals(v.getValue().getCountry()) &&
+                v.getValue().getCatalog_number().length() == 5 &&
+                isValidDate(v.getValue().getSelling_status_date()));
 
-        KStream<String, TopicBValue> parsedB = topicB.mapValues(value -> {
+        KStream<String, TopicB> parsedB = topicB.mapValues(value -> {
             try {
-                return mapper.readValue(value, TopicBValue.class);
+                return mapper.readValue(value, TopicB.class);
             } catch (Exception e) {
                 return null;
             }
         }).filter((k, v) -> v != null &&
-                "001".equals(v.getCountry()) &&
-                v.getCatalog_number().length() == 5 &&
-                isValidDate(v.getSales_date()));
+                "001".equals(v.getValue().getCountry()) &&
+                v.getValue().getCatalog_number().length() == 5 &&
+                isValidDate(v.getValue().getSales_date()));
 
         KStream<String, Object> joined = parsedA.join(
                 parsedB,
