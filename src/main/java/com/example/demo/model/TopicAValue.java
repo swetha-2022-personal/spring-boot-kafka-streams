@@ -1,5 +1,10 @@
 package com.example.demo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
 public class TopicAValue {
     private String catalog_number;
     private boolean is_selling;
@@ -10,7 +15,24 @@ public class TopicAValue {
     private String selling_status_date;
     private String country;
 
-    public String getCatalog_number() { 
+    public TopicAValue() {
+    	
+    }
+    
+
+	public TopicAValue(String catalog_number, boolean is_selling, String model, String product_id,
+			String registration_id, String registration_number, String selling_status_date, String country) {
+		super();
+		this.catalog_number = catalog_number;
+		this.is_selling = is_selling;
+		this.model = model;
+		this.product_id = product_id;
+		this.registration_id = registration_id;
+		this.registration_number = registration_number;
+		this.selling_status_date = selling_status_date;
+		this.country = country;
+	}
+	public String getCatalog_number() { 
     	return catalog_number; }
     public void setCatalog_number(String catalog_number) {
     	this.catalog_number = catalog_number;

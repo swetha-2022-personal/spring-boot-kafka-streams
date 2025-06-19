@@ -6,6 +6,10 @@ public class TopicB {
 	private TopicBValue value;
 	private Audit audit;
 	
+	public TopicB() {
+		
+	}
+	
 	public TopicAKey getKey() {
 		return key;
 	}
@@ -22,6 +26,12 @@ public class TopicB {
 		return audit;
 	}
 	public void setAudit(Audit audit) {
+		this.audit = audit;
+	}
+	public TopicB(TopicAKey key, TopicBValue value, Audit audit) {
+		super();
+		this.key = key;
+		this.value = value;
 		this.audit = audit;
 	}
 	

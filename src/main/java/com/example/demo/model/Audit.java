@@ -5,6 +5,15 @@ public class Audit {
 	private String event_name;
 	private String source_system;
 	
+	public Audit() {
+		
+	}
+	
+	public Audit(String event_name, String source_system) {
+		super();
+		this.event_name = event_name;
+		this.source_system = source_system;
+	}
 	public String getEvent_name() {
 		return event_name;
 	}

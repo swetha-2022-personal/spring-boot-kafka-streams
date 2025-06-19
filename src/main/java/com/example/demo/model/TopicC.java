@@ -1,17 +1,17 @@
 package com.example.demo.model;
 
-public class TopicA {
-
-	private TopicAKey key;
-	private TopicAValue value;
-	private Audit audit;
+public class TopicC {
 	
-	
-	public TopicA() {
-		
-	}
-	
-	public TopicA(TopicAKey key, TopicAValue value, Audit audit) {
+	  private TopicAKey key;
+	  private JoinedValue value;
+	  private Audit audit;
+	  
+	  
+	  public TopicC() {
+		  
+	  }
+	  
+	public TopicC(TopicAKey key, JoinedValue value, Audit audit) {
 		super();
 		this.key = key;
 		this.value = value;
@@ -23,10 +23,10 @@ public class TopicA {
 	public void setKey(TopicAKey key) {
 		this.key = key;
 	}
-	public TopicAValue getValue() {
+	public JoinedValue getValue() {
 		return value;
 	}
-	public void setValue(TopicAValue value) {
+	public void setValue(JoinedValue value) {
 		this.value = value;
 	}
 	public Audit getAudit() {
@@ -35,7 +35,7 @@ public class TopicA {
 	public void setAudit(Audit audit) {
 		this.audit = audit;
 	}
-	
-	
 
+	  
+	  
 }

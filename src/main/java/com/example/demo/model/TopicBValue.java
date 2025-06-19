@@ -6,8 +6,20 @@ public class TopicBValue {
     private String quantity;
     private String sales_date;
     private String country;
+    
+    public TopicBValue() {
+    	
+    }
 
-    public String getCatalog_number() {
+    public TopicBValue(String catalog_number, String order_number, String quantity, String sales_date, String country) {
+		super();
+		this.catalog_number = catalog_number;
+		this.order_number = order_number;
+		this.quantity = quantity;
+		this.sales_date = sales_date;
+		this.country = country;
+	}
+	public String getCatalog_number() {
     	return catalog_number;
     	}
     public void setCatalog_number(String catalog_number) { 
